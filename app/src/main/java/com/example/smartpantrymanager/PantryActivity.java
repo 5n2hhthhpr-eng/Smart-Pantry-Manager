@@ -23,6 +23,11 @@ public class PantryActivity extends AppCompatActivity {
     private ArrayList<PantryItem> pantryItems;
 
     private Button btnAddIngredient;
+    private Button btnSuggestedRecipes;
+
+    private Button btnNavPantry;
+    private Button btnNavRecipes;
+    private Button btnNavSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +36,15 @@ public class PantryActivity extends AppCompatActivity {
 
         recyclerViewPantry = findViewById(R.id.recyclerViewPantry);
         btnAddIngredient = findViewById(R.id.btnAddIngredient);
+        btnSuggestedRecipes = findViewById(R.id.btnSuggestedRecipes);
+        btnNavPantry = findViewById(R.id.btnNavPantry);
+        btnNavRecipes = findViewById(R.id.btnNavRecipes);
+        btnNavSettings = findViewById(R.id.btnNavSettings);
 
         databaseHelper = new DatabaseHelper(this);
+
+        // Add the 20 recipes to the database on first run
+        databaseHelper.seedRecipes();
 
         pantryItems = databaseHelper.getAllPantryItems();
 
@@ -66,6 +78,31 @@ public class PantryActivity extends AppCompatActivity {
                     AddEditIngredientActivity.class
             );
 
+            startActivity(intent);
+        });
+
+        btnSuggestedRecipes.setOnClickListener(v -> {
+
+            Intent intent = new Intent(
+                    PantryActivity.this,
+                    SuggestedRecipesActivity.class
+            );
+            startActivity(intent);
+        });
+
+        btnNavRecipes.setOnClickListener(v -> {
+            Intent intent = new Intent(
+                    PantryActivity.this,
+                    SuggestedRecipesActivity.class
+            );
+            startActivity(intent);
+        });
+
+        btnNavSettings.setOnClickListener(v -> {
+            Intent intent = new Intent(
+                    PantryActivity.this,
+                    SettingsActivity.class
+            );
             startActivity(intent);
         });
     }

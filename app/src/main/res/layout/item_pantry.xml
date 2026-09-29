@@ -1,49 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="5dp"
+    app:cardBackgroundColor="#F9F7EF">
+
+
+
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:padding="18dp">
 
     <TextView
         android:id="@+id/txtIngredientName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ingredient Name"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:text="Chicken Breast"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_text" />
 
     <TextView
         android:id="@+id/txtIngredientQuantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quantity: 500g" />
+        android:layout_marginTop="6dp"
+        android:text="Quantity: 2 items"
+        android:textSize="16sp"
+        android:textColor="@color/olive_dark" />
 
     <TextView
         android:id="@+id/txtIngredientExpiry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Expiry Date: Not specified" />
+        android:layout_marginTop="4dp"
+        android:text="Expiry Date: 2026-10-09"
+        android:textSize="14sp"
+        android:textColor="@color/grey_text" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="14dp">
 
         <Button
             android:id="@+id/btnEditIngredient"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Edit" />
+            android:text="Edit"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="1dp" />
 
         <Button
             android:id="@+id/btnDeleteIngredient"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Delete" />
+            android:text="Delete"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
 </LinearLayout>
+    </androidx.cardview.widget.CardView>

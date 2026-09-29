@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/pantry_background"
+        android:scaleType="centerCrop"
+        android:alpha="0.66"
+        android:contentDescription="@null" />
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="20dp">
 
     <TextView
         android:layout_width="match_parent"
@@ -11,19 +24,82 @@
         android:text="My Pantry"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:paddingBottom="12dp" />
+        android:textColor="@color/dark_text" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Keep track of what you have at home"
+        android:textSize="15sp"
+        android:textColor="@color/grey_text"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="18dp" />
 
     <Button
         android:id="@+id/btnAddIngredient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Ingredient" />
+        android:text=" + Add Ingredient"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnSuggestedRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Recipes I can make"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="false" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPantry"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="18dp"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp" />
 
 </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:elevation="8dp">
+
+        <Button
+            android:id="@+id/btnNavPantry"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Pantry"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnNavRecipes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="recipes"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnNavSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Settings"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+</LinearLayout>
+
+</FrameLayout>
